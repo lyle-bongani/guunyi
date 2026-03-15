@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guunyi Homestead | Sustainable Rural Retreat</title>
+  <meta name="description"
+    content="Guunyi Homestead is a modern 4-bedroom rural haven in Bromley, Zimbabwe. Experience farm-fresh living, countryside relaxation, remote working amenities, and easy booking via WhatsApp or Airbnb." />
+
+  <!-- SEO Meta Tags -->
+  <meta name="keywords"
+    content="Guunyi Homestead, Bromley Zimbabwe, rural retreat, farm stay, sustainable living, countryside accommodation, remote working, Airbnb Zimbabwe" />
+  <meta name="author" content="Guunyi Homestead" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:title" content="Guunyi Homestead | Sustainable Rural Retreat" />
+  <meta property="og:description"
+    content="Modern 4-bedroom rural haven in Bromley, Zimbabwe. Experience farm-fresh living and countryside relaxation." />
+  <meta property="og:image" content="images/Guunyi Homestead Logo.webp" />
+  <meta property="og:url" content="https://www.guunyi.co.zw" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Guunyi Homestead" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guunyi Homestead | Sustainable Rural Retreat" />
+  <meta name="twitter:description"
+    content="Modern 4-bedroom rural haven in Bromley, Zimbabwe. Experience farm-fresh living and countryside relaxation." />
+  <meta name="twitter:image" content="images/Guunyi Homestead Logo.webp" />
+
+  <!-- Fonts: Cormorant Garamond (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="images/Guunyi Homestead Logo.webp" />
+  <link rel="apple-touch-icon" href="images/Guunyi Homestead Logo.webp" />
+
+  <!-- Structured Data for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Guunyi Homestead",
+    "description": "Modern 4-bedroom rural haven in Bromley, Zimbabwe offering sustainable living and countryside relaxation",
+    "url": "https://www.guunyi.co.zw",
+    "logo": "https://www.guunyi.co.zw/images/Guunyi Homestead Logo.webp",
+    "image": "https://www.guunyi.co.zw/images/Guunyi Homestead Logo.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bromley",
+      "addressCountry": "Zimbabwe"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -17.8,
+      "longitude": 31.0
+    },
+    "telephone": "+263-776-260-360",
+    "priceRange": "$$",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Workspace", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Farm Fresh Food", "value": true }
+    ],
+    "numberOfRooms": 4,
+    "maximumAttendeeCapacity": 4
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WYQ6HYYBK7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-WYQ6HYYBK7');
+  </script>
+</head>
+
+<body>
+  <!-- ═══════════════ HEADER / NAV ═══════════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="https://www.guunyi.co.zw" class="site-logo" aria-label="Guunyi Homestead Home">
+        <img src="images/Guunyi Homestead Logo.webp" alt="Guunyi Homestead Logo" width="38" height="38" />
+      </a>
+      <nav id="mainNav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Workspace</a>
+        <a href="#airbnb">Airbnb</a>
+        <a href="#contact-location">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="weather-time-widget">
+          <div class="date-display" id="dateDisplay"></div>
+          <div class="time-display" id="timeDisplay"></div>
+          <div class="weather-display" id="weatherDisplay">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+        </div>
+        <button id="hamburger" aria-label="Open Menu"><span class="hamburger-bar"></span></button>
+      </div>
+      <div class="nav-overlay" id="navOverlay"></div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg"
+      style="background-image: url('https://images.unsplash.com/photo-1596436889106-be35e843f974?w=1920&q=80');">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline">Sustainable Rural Living</p>
+      <h1>
+        <a href="https://www.guunyi.co.zw" title="Go to homepage">G U U N Y I &nbsp; H O M E S T E A D</a>
+      </h1>
+      <p class="hero-subtitle">A tranquil escape in Bromley, Zimbabwe</p>
+      <a href="#contact-location" class="hero-cta">
+        <span>Discover the house</span>
+        <span class="cta-line"></span>
+      </a>
+    </div>
+    <div class="hero-scroll-hint">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about" class="about-section reveal-on-scroll">
+    <div class="section-inner split-layout">
+      <div class="split-text">
+        <h2 class="section-heading">
+          A B O U T &nbsp; T H E<br>P L A C E
+        </h2>
+        <p>
+          Guunyi Homestead is a modern 4-bedroom rural haven in Bromley, Zimbabwe. Enjoy a peaceful, gated property
+          with open-plan living, dedicated workspace, and all modern comforts. Savor farm-fresh eggs, indulge in
+          farm-raised meats, and explore the countryside.
+        </p>
+        <p>
+          From sunrise through the indigenous trees to starlit evenings with a braai in hand, everything here is
+          crafted to make you feel outside of time. Whether you come to unplug, to create, or simply to breathe
+          deeper, this refuge meets you where you are.
+        </p>
+        <p class="about-meta">Entire home · 4 guests · 4 bedrooms · 6 beds · 2 baths</p>
+      </div>
+      <div class="split-image">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+          alt="Luxury homestead interior with warm lighting" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FEATURES STRIP ═══════════════ -->
+  <section class="features-strip reveal-on-scroll">
+    <div class="feature-strip-grid">
+      <div class="feature-strip-card">
+        <div class="feature-strip-icon"><i class="fas fa-home"></i></div>
+        <h3>Modern Comfort</h3>
+        <p>Open-plan living, 4 bedrooms, dedicated workspace, 24/7 power and modern amenities throughout.</p>
+      </div>
+      <div class="feature-strip-card">
+        <div class="feature-strip-icon"><i class="fas fa-seedling"></i></div>
+        <h3>Farm & Food</h3>
+        <p>Fresh organic vegetables, farm-fresh eggs, and farm-raised beef, fish, rabbit, and guinea fowl.</p>
+      </div>
+      <div class="feature-strip-card">
+        <div class="feature-strip-icon"><i class="fas fa-tree"></i></div>
+        <h3>Nature Escape</h3>
+        <p>Country walks, stargazing, swim in the dam, and explore the surrounding Zimbabwean countryside.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+  <section id="experience" class="experience-section reveal-on-scroll">
+    <div class="experience-bg parallax-bg"
+      style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80');">
+    </div>
+    <div class="experience-overlay"></div>
+    <div class="experience-content">
+      <h2 class="section-heading light">G U E S T &nbsp; E X P E R I E N C E</h2>
+      <p class="experience-intro-text">Discover the joys of rural living with hands-on activities, fresh food, and
+        tranquil moments.</p>
+      <div class="experience-cards">
+        <div class="experience-card glass-card">
+          <div class="exp-icon-circle"><i class="fas fa-egg"></i></div>
+          <div class="exp-text">Pick your own organic eggs daily</div>
+        </div>
+        <div class="experience-card glass-card">
+          <div class="exp-icon-circle"><i class="fas fa-drumstick-bite"></i></div>
+          <div class="exp-text">Purchase farm-raised chicken, rabbit or guinea fowl</div>
+        </div>
+        <div class="experience-card glass-card">
+          <div class="exp-icon-circle"><i class="fas fa-leaf"></i></div>
+          <div class="exp-text">Explore tranquil nature trails and walks</div>
+        </div>
+        <div class="experience-card glass-card">
+          <div class="exp-icon-circle"><i class="fas fa-fire"></i></div>
+          <div class="exp-text">Enjoy a braai, open-fire cooking & stargazing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WORKSPACE ═══════════════ -->
+  <section id="work" class="workspace-section reveal-on-scroll">
+    <div class="section-inner split-layout reverse">
+      <div class="split-image">
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+          alt="Remote workspace with natural light" loading="lazy" />
+      </div>
+      <div class="split-text">
+        <h2 class="section-heading">R E M O T E<br>W O R K S P A C E</h2>
+        <p>Work remotely in comfort and style with fast internet, dedicated spaces, and all the amenities you need for
+          productivity and relaxation.</p>
+        <div class="workspace-features">
+          <div class="workspace-feature">
+            <span class="workspace-icon"><i class="fas fa-wifi"></i></span>
+            <span>Fast Starlink internet for digital nomads</span>
+          </div>
+          <div class="workspace-feature">
+            <span class="workspace-icon"><i class="fas fa-chair"></i></span>
+            <span>Dedicated indoor/outdoor workspaces</span>
+          </div>
+          <div class="workspace-feature">
+            <span class="workspace-icon"><i class="fas fa-solar-panel"></i></span>
+            <span>Quiet, solar-powered retreat</span>
+          </div>
+          <div class="workspace-feature">
+            <span class="workspace-icon"><i class="fas fa-utensils"></i></span>
+            <span>Onsite meals, refrigeration, and laundry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ AIRBNB (Cinematic CTA) ═══════════════ -->
+  <section id="airbnb" class="airbnb-section reveal-on-scroll">
+    <div class="airbnb-bg parallax-bg"
+      style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1920&q=80');">
+    </div>
+    <div class="airbnb-overlay"></div>
+    <div class="airbnb-content">
+      <div class="airbnb-glass-panel">
+        <p class="airbnb-label">Your Retreat Awaits</p>
+        <h2 class="section-heading light">B O O K &nbsp; Y O U R &nbsp; S T A Y</h2>
+        <p class="airbnb-desc">Experience rural tranquility at Guunyi Homestead — a modern 4-bedroom haven in Bromley,
+          Zimbabwe. Relax in our peaceful, gated property, surrounded by nature.</p>
+        <div class="airbnb-stats">
+          <div class="airbnb-stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Bedrooms</span>
+          </div>
+          <div class="airbnb-stat">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Beds</span>
+          </div>
+          <div class="airbnb-stat">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Bathrooms</span>
+          </div>
+          <div class="airbnb-stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Guests</span>
+          </div>
+        </div>
+        <div class="airbnb-buttons">
+          <a href="https://www.airbnb.com/rooms/1349656317561540030" target="_blank" class="button-airbnb"
+            aria-label="Book Guunyi Homestead on Airbnb">
+            <i class="fab fa-airbnb"></i> Book on Airbnb
+          </a>
+          <a href="https://wa.me/263776260360?text=Hello%20Guunyi%20Homestead%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay"
+            target="_blank" rel="noopener" class="button-whatsapp" aria-label="Book on WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ IMAGE GALLERY STRIP ═══════════════ -->
+  <section class="gallery-strip">
+    <div class="gallery-strip-inner">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80"
+          alt="Luxury bedroom interior" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=600&q=80"
+          alt="Natural swimming dam at sunset" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80"
+          alt="Luxury hotel exterior" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80"
+          alt="Countryside nature view" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT & LOCATION ═══════════════ -->
+  <section id="contact-location" class="contact-location-section reveal-on-scroll">
+    <div class="contact-section-inner">
+      <div class="contact-header">
+        <h2 class="section-heading">G E T &nbsp; I N &nbsp; T O U C H</h2>
+        <p class="contact-subtitle">We'd love to hear from you. Reach out to book your stay or ask any questions.</p>
+      </div>
+
+      <!-- Contact Cards Row -->
+      <div class="contact-cards-row">
+        <a href="https://wa.me/263776260360" target="_blank" class="contact-card glass-card">
+          <div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp</h3>
+          <p>+263 776 260 360</p>
+        </a>
+        <a href="mailto:care@guunyi.co.zw" class="contact-card glass-card">
+          <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p>care@guunyi.co.zw</p>
+        </a>
+        <div class="contact-card glass-card">
+          <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Location</h3>
+          <p>15 Glen Avon Farm, Bromley, Goromonzi, Zimbabwe</p>
+        </div>
+      </div>
+
+      <!-- Form + Map Grid -->
+      <div class="contact-grid">
+        <div class="contact-form-panel glass-card">
+          <h3 class="form-heading">Send a Message</h3>
+          <form class="contact-form" action="https://formspree.io/f/xjkogobn" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Tell us about your ideal stay..." required></textarea>
+            <button type="submit">
+              <span>Send Message</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+        <div class="contact-map-panel">
+          <div class="map-container">
+            <iframe width="100%" height="100%" frameborder="0" style="border:0"
+              src="https://www.google.com/maps?q=W77C%2B5X%2C%20Dema%2C%20Zimbabwe&output=embed" allowfullscreen=""
+              title="Guunyi Homestead location on the map"></iframe>
+          </div>
+          <div class="map-info-row">
+            <div class="pluscode"><i class="fas fa-location-dot"></i> Plus Code: W77C+5X, Dema, Zimbabwe</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <div class="footer-logo-row">
+      <a href="#home" class="footer-logo" aria-label="Guunyi Homestead Home">
+        <img src="images/Guunyi Homestead Logo.webp" alt="Guunyi Homestead Logo" width="120" height="60" />
+      </a>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col footer-links">
+        <div class="footer-heading">Quick Links</div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Guest Experience</a>
+        <a href="#work">Workspace</a>
+        <a href="#airbnb">Airbnb</a>
+        <a href="#contact-location">Contact</a>
+      </div>
+      <div class="footer-col footer-contact-col">
+        <div class="footer-heading">Contact</div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i> <a
+            href="mailto:care@guunyi.co.zw">care@guunyi.co.zw</a></div>
+        <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/263776260360"
+            target="_blank">+263 776 260 360</a></div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Guunyi Homestead, 15 Glen Avon Farm,
+          Bromley, Goromonzi, Zimbabwe</div>
+      </div>
+      <div class="footer-col footer-social-col">
+        <div class="footer-heading">Connect</div>
+        <div class="footer-social-icons">
+          <a href="https://www.tiktok.com/@guunyihomestead" target="_blank" aria-label="TikTok"><i
+              class="fab fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/guunyihomestead/" target="_blank" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://www.pinterest.com/guunyihomestead/" target="_blank" aria-label="Pinterest"><i
+              class="fab fa-pinterest"></i></a>
+          <a href="https://www.linkedin.com/company/guunyi-homestead/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://web.facebook.com/guunyihomestead" target="_blank" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
+        </div>
+        <a href="https://www.airbnb.com/rooms/1349656317561540030" target="_blank" class="footer-airbnb-btn">
+          <i class="fab fa-airbnb"></i> Book on Airbnb
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Guunyi Homestead. All rights reserved.</div>
+      <div class="footer-credit">Website by <a href="https://www.spemedia.co.zw/" target="_blank"
+          rel="noopener">speMEDIA Zimbabwe</a></div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ FLOATING WIDGETS ═══════════════ -->
+  <div class="floating-widget-stack">
+    <div class="whatsapp-widget-container">
+      <div class="whatsapp-widget-text">
+        <div class="wa-title">Got a Question?</div>
+        <div class="wa-subtitle">WhatsApp Mike</div>
+      </div>
+      <a href="https://wa.me/263776260360?text=Hello%20Guunyi%20Homestead%2C%20I'm%20interested%20in%20your%20offering."
+        class="whatsapp-widget" target="_blank" aria-label="Chat with WhatsApp - Guunyi Homestead">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
+      </a>
+    </div>
+    <button onclick="topFunction()" id="topBtn" title="Back to Top" aria-label="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
