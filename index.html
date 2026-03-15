@@ -295,27 +295,135 @@
     </div>
   </section>
 
-  <!-- ═══════════════ IMAGE GALLERY STRIP ═══════════════ -->
-  <section class="gallery-strip">
-    <div class="gallery-strip-inner">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80"
-          alt="Luxury bedroom interior" loading="lazy" />
+  <!-- ═══════════════ CATEGORIZED GALLERY ═══════════════ -->
+  <section id="gallery" class="gallery-section reveal-on-scroll">
+    <div class="section-inner">
+      <div class="gallery-header">
+        <h2 class="section-heading">G A L L E R Y</h2>
+        <p class="gallery-subtitle">Explore every corner of Guunyi Homestead</p>
       </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=600&q=80"
-          alt="Natural swimming dam at sunset" loading="lazy" />
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="living-room">Living Room</button>
+        <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+        <button class="filter-btn" data-filter="dining">Dining</button>
+        <button class="filter-btn" data-filter="bedrooms">Bedrooms</button>
+        <button class="filter-btn" data-filter="bathrooms">Bathrooms</button>
+        <button class="filter-btn" data-filter="workspace">Workspace</button>
+        <button class="filter-btn" data-filter="exterior">Exterior</button>
       </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80"
-          alt="Luxury hotel exterior" loading="lazy" />
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80"
-          alt="Countryside nature view" loading="lazy" />
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Living Room -->
+        <div class="gallery-card" data-category="living-room">
+          <img src="airbnb_images/01-living-room/001.jpeg" alt="Living Room 1" loading="lazy" />
+          <div class="card-overlay"><span>Living Room</span></div>
+        </div>
+        <div class="gallery-card" data-category="living-room">
+          <img src="airbnb_images/01-living-room/002.jpeg" alt="Living Room 2" loading="lazy" />
+          <div class="card-overlay"><span>Living Room</span></div>
+        </div>
+        <div class="gallery-card" data-category="living-room">
+          <img src="airbnb_images/01-living-room/003.jpeg" alt="Living Room 3" loading="lazy" />
+          <div class="card-overlay"><span>Living Room</span></div>
+        </div>
+        <div class="gallery-card" data-category="living-room">
+          <img src="airbnb_images/01-living-room/004.jpeg" alt="Living Room 4" loading="lazy" />
+          <div class="card-overlay"><span>Living Room</span></div>
+        </div>
+
+        <!-- Kitchen -->
+        <div class="gallery-card" data-category="kitchen">
+          <img src="airbnb_images/02-full-kitchen/001.jpeg" alt="Kitchen 1" loading="lazy" />
+          <div class="card-overlay"><span>Kitchen</span></div>
+        </div>
+        <div class="gallery-card" data-category="kitchen">
+          <img src="airbnb_images/02-full-kitchen/002.jpeg" alt="Kitchen 2" loading="lazy" />
+          <div class="card-overlay"><span>Kitchen</span></div>
+        </div>
+        <div class="gallery-card" data-category="kitchen">
+          <img src="airbnb_images/02-full-kitchen/003.jpeg" alt="Kitchen 3" loading="lazy" />
+          <div class="card-overlay"><span>Kitchen</span></div>
+        </div>
+        <div class="gallery-card" data-category="kitchen">
+          <img src="airbnb_images/02-full-kitchen/004.jpeg" alt="Kitchen 4" loading="lazy" />
+          <div class="card-overlay"><span>Kitchen</span></div>
+        </div>
+        <div class="gallery-card" data-category="kitchen">
+          <img src="airbnb_images/02-full-kitchen/005.jpeg" alt="Kitchen 5" loading="lazy" />
+          <div class="card-overlay"><span>Kitchen</span></div>
+        </div>
+        <div class="gallery-card" data-category="kitchen">
+          <img src="airbnb_images/02-full-kitchen/006.jpeg" alt="Kitchen 6" loading="lazy" />
+          <div class="card-overlay"><span>Kitchen</span></div>
+        </div>
+        <div class="gallery-card" data-category="kitchen">
+          <img src="airbnb_images/02-full-kitchen/007.jpeg" alt="Kitchen 7" loading="lazy" />
+          <div class="card-overlay"><span>Kitchen</span></div>
+        </div>
+
+        <!-- Dining -->
+        <div class="gallery-card" data-category="dining">
+          <img src="airbnb_images/03-dining-area/001.jpeg" alt="Dining Area" loading="lazy" />
+          <div class="card-overlay"><span>Dining</span></div>
+        </div>
+
+        <!-- Bedrooms -->
+        <div class="gallery-card" data-category="bedrooms">
+          <img src="airbnb_images/04-bedroom-1/001.jpeg" alt="Bedroom 1" loading="lazy" />
+          <div class="card-overlay"><span>Bedroom 1</span></div>
+        </div>
+        <div class="gallery-card" data-category="bedrooms">
+          <img src="airbnb_images/05-bedroom-2/001.jpeg" alt="Bedroom 2" loading="lazy" />
+          <div class="card-overlay"><span>Bedroom 2</span></div>
+        </div>
+        <div class="gallery-card" data-category="bedrooms">
+          <img src="airbnb_images/06-bedroom-3/001.jpeg" alt="Bedroom 3" loading="lazy" />
+          <div class="card-overlay"><span>Bedroom 3</span></div>
+        </div>
+        <div class="gallery-card" data-category="bedrooms">
+          <img src="airbnb_images/07-bedroom-4/001.jpeg" alt="Bedroom 4" loading="lazy" />
+          <div class="card-overlay"><span>Bedroom 4</span></div>
+        </div>
+
+        <!-- Bathrooms -->
+        <div class="gallery-card" data-category="bathrooms">
+          <img src="airbnb_images/08-full-bathroom-1/001.jpeg" alt="Bathroom 1" loading="lazy" />
+          <div class="card-overlay"><span>Bathroom 1</span></div>
+        </div>
+        <div class="gallery-card" data-category="bathrooms">
+          <img src="airbnb_images/09-full-bathroom-2/001.jpeg" alt="Bathroom 2" loading="lazy" />
+          <div class="card-overlay"><span>Bathroom 2</span></div>
+        </div>
+
+        <!-- Workspace -->
+        <div class="gallery-card" data-category="workspace">
+          <img src="airbnb_images/10-workspace/001.jpeg" alt="Workspace" loading="lazy" />
+          <div class="card-overlay"><span>Workspace</span></div>
+        </div>
+
+        <!-- Exterior -->
+        <div class="gallery-card" data-category="exterior">
+          <img src="airbnb_images/12-exterior/001.jpeg" alt="Exterior" loading="lazy" />
+          <div class="card-overlay"><span>Exterior</span></div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════ LIGHTBOX MODAL ═══════════════ -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Enlarged gallery image">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+    <div class="lightbox-nav">
+      <button id="prevBtn" class="lightbox-arrow"><i class="fas fa-chevron-left"></i></button>
+      <button id="nextBtn" class="lightbox-arrow"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
 
   <!-- ═══════════════ CONTACT & LOCATION ═══════════════ -->
   <section id="contact-location" class="contact-location-section reveal-on-scroll">

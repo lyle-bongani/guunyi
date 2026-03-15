@@ -1047,34 +1047,212 @@ a.contact-card {
   margin-right: 0.4rem;
 }
 
-/* ─── GALLERY STRIP ─── */
-.gallery-strip {
-  padding: 0;
-  overflow: hidden;
+/* ─── GALLERY SECTION ─── */
+.gallery-section {
+  background: #07120a;
+  padding: 6rem 3vw;
 }
 
-.gallery-strip-inner {
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-subtitle {
+  color: #a2b8ad;
+  font-size: 1.05rem;
+  margin-top: -0.5rem;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background: rgba(18, 41, 24, 0.6);
+  border: 1px solid rgba(207, 161, 59, 0.3);
+  color: #a2b8ad;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #CFA13B;
+  color: #07120a;
+  border-color: #CFA13B;
+  transform: translateY(-2px);
+}
+
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  transition: all 0.5s ease;
 }
 
-.gallery-item {
+.gallery-card {
+  position: relative;
+  border-radius: 8px;
   overflow: hidden;
   aspect-ratio: 4/3;
+  cursor: pointer;
+  background: #122918;
+  animation: fadeIn 0.5s ease forwards;
 }
 
-.gallery-item img {
+.gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease, filter 0.4s;
-  filter: brightness(0.8) saturate(1);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.85);
 }
 
-.gallery-item:hover img {
-  transform: scale(1.08);
-  filter: brightness(1) saturate(1.1);
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 18, 10, 0.8) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-overlay span {
+  color: #CFA13B;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.gallery-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.gallery-card:hover .card-overlay span {
+  transform: translateY(0);
+}
+
+/* ─── LIGHTBOX MODAL ─── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 13, 7, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 3rem;
+  color: #CFA13B;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+.lightbox-content {
+  max-width: 85%;
+  max-height: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.lightbox.active img {
+  transform: scale(1);
+}
+
+.lightbox-caption {
+  margin-top: 1.5rem;
+  color: #CFA13B;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.lightbox-nav {
+  position: absolute;
+  width: 100%;
+  padding: 0 4vw;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.lightbox-arrow {
+  background: rgba(207, 161, 59, 0.1);
+  border: 1px solid rgba(207, 161, 59, 0.3);
+  color: #CFA13B;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.lightbox-arrow:hover {
+  background: #CFA13B;
+  color: #07120a;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ─── FOOTER ─── */
