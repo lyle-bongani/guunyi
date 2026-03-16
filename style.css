@@ -1098,7 +1098,41 @@ a.contact-card {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
-  transition: all 0.5s ease;
+}
+
+.gallery-card.gallery-hidden {
+  display: none !important;
+}
+
+.gallery-more-btn-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.show-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid #CFA13B;
+  color: #CFA13B;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background: #CFA13B;
+  color: #07120a;
+}
+
+.show-more-btn i {
+  transition: transform 0.4s ease;
+}
+
+.show-more-btn.active i {
+  transform: rotate(180deg);
 }
 
 .gallery-card {
@@ -1181,7 +1215,9 @@ a.contact-card {
   color: #CFA13B;
   cursor: pointer;
   line-height: 1;
+  padding: 10px; /* Increase click area */
   transition: transform 0.3s ease;
+  z-index: 10001; /* Ensure it is above everything else in the lightbox */
 }
 
 .lightbox-close:hover {
@@ -1189,17 +1225,20 @@ a.contact-card {
 }
 
 .lightbox-content {
-  max-width: 85%;
-  max-height: 80%;
+  width: 95vw;
+  height: 95vh;
+  max-width: 1600px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  z-index: 1; /* Keep below close button */
 }
 
 .lightbox-content img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: calc(100% - 80px); /* Leave room for the caption and spacing */
   object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);

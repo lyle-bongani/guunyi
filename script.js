@@ -194,7 +194,6 @@
   });
 
   // ─── CATEGORIZED GALLERY & LIGHTBOX ───
-  const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryCards = document.querySelectorAll('.gallery-card');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
@@ -202,36 +201,101 @@
   const lightboxClose = document.querySelector('.lightbox-close');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  const showMoreBtn = document.getElementById('showMoreGallery');
+  const galleryGrid = document.getElementById('galleryGrid');
+  const INITIAL_VISIBLE = 8;
 
   let currentFilteredCards = Array.from(galleryCards);
   let currentIndex = 0;
+  let activeFilter = 'all';
+  let galleryExpanded = false;
 
-  // Filter functionality
-  filterBtns.forEach(btn => {
+  // Single function that manages all gallery visibility
+  function refreshGallery() {
+    let visibleCount = 0;
+
+    galleryCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const matchesFilter = (activeFilter === 'all' || category === activeFilter);
+
+      if (!matchesFilter) {
+        // Doesn't match the current filter — fully hide it
+        card.style.display = 'none';
+        card.classList.remove('gallery-hidden');
+      } else {
+        // Matches the filter
+        card.style.display = '';
+        if (!galleryExpanded && visibleCount >= INITIAL_VISIBLE) {
+          card.classList.add('gallery-hidden');
+        } else {
+          card.classList.remove('gallery-hidden');
+        }
+        visibleCount++;
+      }
+    });
+
+    // Update lightbox navigation set
+    currentFilteredCards = Array.from(galleryCards).filter(card => {
+      const cat = card.getAttribute('data-category');
+      return activeFilter === 'all' || cat === activeFilter;
+    });
+
+    // Show/hide the Show More button
+    if (showMoreBtn) {
+      if (visibleCount <= INITIAL_VISIBLE) {
+        showMoreBtn.parentElement.style.display = 'none';
+      } else {
+        showMoreBtn.parentElement.style.display = '';
+      }
+    }
+  }
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update active state
-      filterBtns.forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filter = btn.getAttribute('data-filter');
+      activeFilter = btn.getAttribute('data-filter');
+      galleryExpanded = false;
 
-      // Filter cards
-      galleryCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      if (showMoreBtn) {
+        showMoreBtn.classList.remove('active');
+        const span = showMoreBtn.querySelector('span');
+        if (span) span.textContent = 'Show More Images';
+      }
 
-      // Update current filtered set for lightbox
-      currentFilteredCards = Array.from(galleryCards).filter(card => {
-        const cat = card.getAttribute('data-category');
-        return filter === 'all' || cat === filter;
-      });
+      refreshGallery();
     });
   });
+
+  // Show More button
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', () => {
+      galleryExpanded = !galleryExpanded;
+      showMoreBtn.classList.toggle('active');
+
+      const span = showMoreBtn.querySelector('span');
+      if (span) {
+        span.textContent = galleryExpanded ? 'Show Less Images' : 'Show More Images';
+      }
+
+      refreshGallery();
+
+      if (!galleryExpanded) {
+        const gallerySection = document.getElementById('gallery');
+        if (gallerySection) {
+          window.scrollTo({
+            top: gallerySection.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  }
+
+  // Initial gallery render
+  refreshGallery();
 
   // Lightbox functionality
   function openLightbox(index) {
@@ -269,9 +333,15 @@
     });
   });
 
-  lightboxClose.onclick = closeLightbox;
-  nextBtn.onclick = (e) => { e.stopPropagation(); showNext(); };
-  prevBtn.onclick = (e) => { e.stopPropagation(); showPrev(); };
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+  if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
   
   lightbox.onclick = (e) => {
     if (e.target === lightbox) closeLightbox();
